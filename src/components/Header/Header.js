@@ -31,7 +31,7 @@ function Header() {
     return (
         <header className="site-header">
             <ul className="logoTV">
-                <img src="/logo/image.png" alt="" />
+                <img src="/image.jpg" alt="" />
             </ul>
             <Navegador barraNavegador = {barraNavegador} />
         </header>

@@ -4,7 +4,7 @@ import './styles.css';
 function Footer() {
     return (
         <footer className="footer">
-            <p></p>
+            <h2 className="textoFooter">Matias Royan, Mateo Lavandeira y Estanislao Miedziak</h2>
         </footer>
     )
 }
