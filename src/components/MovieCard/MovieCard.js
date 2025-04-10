@@ -18,8 +18,10 @@ class MovieCard extends Component {
             src={`https://image.tmdb.org/t/p/w300${this.state.movieData.poster_path}`}
             alt={this.state.movieData.title}
           />
-          <h1>{this.state.movieData.title}</h1>
-        </Link>
+          </Link>
+          <p>{this.state.movieData.title}</p>
+          <p>{this.state.movieData.overview}</p>
+      
       </div>
     );
   }
