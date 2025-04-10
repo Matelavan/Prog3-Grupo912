@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class MovieDetalle extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +29,7 @@ class MovieDetalle extends Component {
         ) : (
           <div>
             <h1>{movie.title}</h1>
+           
             <img
               src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
               alt={movie.title}

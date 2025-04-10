@@ -10,13 +10,7 @@ function Header() {
         }, {
             name: 'Favoritos',
             path: '/favoritos'
-        }, {
-            name: 'Más populares',
-            path: '/peliculasPopulares'
-        }, {
-            name: 'En cartelera',
-            path: '/peliculasEnCartelera'
-        }, {
+        },  {
             name: 'Top Rated',
             path: '/peliculasEnCartelera'
         }, {
@@ -31,7 +25,7 @@ function Header() {
     return (
         <header className="site-header">
             <ul className="logoTV">
-                <img src="/image.jpg" alt="" />
+                <img src="/image.jpg" alt="" className="logoTV" />
             </ul>
             <Navegador barraNavegador = {barraNavegador} />
         </header>
