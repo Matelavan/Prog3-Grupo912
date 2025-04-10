@@ -10,15 +10,13 @@ function Header() {
         }, {
             name: 'Favoritos',
             path: '/favoritos'
-        },  {
-            name: 'Top Rated',
-            path: '/peliculasEnCartelera'
         }, {
-            name: 'Proximamente',
-            path: '/peliculasProximamente'
-        }, {
-            name: 'Ver Todas',
-            path: '/verTodas'
+            name: 'Cartelera',
+            path: '/ver-todas/cartelera'
+        },
+        {
+            name: 'Populares',
+            path: '/ver-todas/populares'
         }
     ]
 
