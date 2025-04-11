@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import MovieCard from '../components/MovieCard/MovieCard';
+import MovieCard from '../../components/MovieCard/MovieCard';
 import { Link } from 'react-router-dom';
+import FiltroPelis from "../../components/FiltroPelis/FiltroPelis";
+import './styles.css'
 
 class Home extends Component {
     constructor(props){
@@ -27,6 +29,9 @@ class Home extends Component {
             .then(data => this.setState({ cartelera: data.results, loading: false }))
             .catch(error => console.log(error));
     }
+    filtrarPeliculas (busquedaPelicula) {
+        this.setState({ busqueda: busquedaPelicula });
+    }
 
     render(){
         const { populares, cartelera, busqueda, loading } = this.state;
@@ -39,12 +44,7 @@ class Home extends Component {
         return (
             <div>
                 <h1>Películas</h1>
-                <input
-                    type="text"
-                    placeholder="Buscar películas..."
-                    value={busqueda}
-                    onChange={(e) => this.setState({ busqueda: e.target.value })}
-                />
+                <FiltroPelis filtro={(busqueda) => this.filtrarPeliculas(busqueda)} />
 
                 {loading ? (
                     <p>Cargando...</p>
@@ -52,7 +52,7 @@ class Home extends Component {
                     <>
                         <section>
                             <h2>Películas Populares</h2>
-                            <div>
+                            <div className="peliculas">
                                 {filtrarPeliculas(populares).map(peli => (
                                     <MovieCard key={peli.id} data={peli} />
                                 ))}
@@ -62,7 +62,7 @@ class Home extends Component {
 
                         <section>
                             <h2>Películas en Cartelera</h2>
-                            <div>
+                            <div className="peliculas">
                                 {filtrarPeliculas(cartelera).map(peli => (
                                     <MovieCard key={peli.id} data={peli} />
                                 ))}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-
+import './styles.css'
 
 class MovieCard extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class MovieCard extends Component {
 
   render() {
     return (
-      <div>
+      <div className="movieCard">
         <Link to={`/moviedetalle/${this.state.movieData.id}`}>
           <img
             src={`https://image.tmdb.org/t/p/w300${this.state.movieData.poster_path}`}

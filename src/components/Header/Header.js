@@ -22,10 +22,10 @@ function Header() {
 
     return (
         <header className="site-header">
-            <ul className="logoTV">
-                <img src="/image.jpg" alt="" className="logoTV" />
-            </ul>
-            <Navegador barraNavegador = {barraNavegador} />
+            <div className="contenedor-header">
+                <img src="/image.jpg" className="logoTV" />
+                <Navegador barraNavegador={barraNavegador} />
+            </div>
         </header>
     )
 };

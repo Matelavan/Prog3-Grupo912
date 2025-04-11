@@ -1,23 +1,28 @@
-.header {
-    background-color: black;
-    color: white;
-    text-align: center;
-    list-style-type: none;
+.site-header {
+    background-color: rgba(21, 118, 191, 0.681);
+    padding:20px;
+    height: 100px; 
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 16px;
-};
-
-
-.logoTV {
-    height: 80px;
-    width: auto;
+   
 }
 
-.logoTV img {
-    width: 50px;
-    margin-left: -30px;
+.contenedor-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.logoTV {
+    height: 100px;
+    margin-right: 200px;
+}
+
+.header {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 200px;
 }
 
 

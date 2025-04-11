@@ -1,0 +1,8 @@
+.peliculas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* más separación entre tarjetas */
+  justify-content: center;
+  padding: 30px;
+  }
+  

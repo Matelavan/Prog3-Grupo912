@@ -11,7 +11,6 @@ class FiltroPelis extends Component{
         evento.preventDefault();
     }
     controlarForm(evento){
-        console.log('esta es la pelin que llega', evento)
         this.setState(
             {valorInput: evento.target.value},
             () => this.props.filtro (this.state.valorInput)
@@ -20,7 +19,7 @@ class FiltroPelis extends Component{
     render(){
         return(
             <form onSubmit={(evento) => this.manejarSubmit(evento)}>
-                <input onChange={(evento)=> this.controlarForm(evento)} value={this.state.valorInput}/>
+                <input onChange={(evento)=> this.controlarForm(evento)} placeholder="Busca una pelicula.." value={this.state.valorInput}/>
             </form>
         )
     }
