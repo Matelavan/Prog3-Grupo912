@@ -73,7 +73,14 @@ favoritos(id){
           <p>{this.state.movieData.title}</p>
           <p className={this.state.descripcion}>{this.state.movieData.overview}</p>
           <p onClick={() => this.mostrarDescripcion()}>{this.state.textodescripcion}</p>
-      <button onClick={() => this.favoritos(this.state.movieData.id)}>
+      <button onClick={() => {
+        if (this.props.quitarFavoritos) {
+          this.props.quitarFavoritos(this.state.movieData.id)
+        }
+        else {
+          this.favoritos(this.state.movieData.id)}
+        }
+      }>
         {this.state.textofavoritos}
       </button>
       </div>

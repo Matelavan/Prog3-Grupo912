@@ -27,12 +27,23 @@ class Favoritos extends Component {
             });
         }
     }
+    quitarFavoritos(id){
+    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
+    const nuevosFavoritos = favoritos.filter(unId => unId !== id);
+    localStorage.setItem('favoritos', JSON.stringify(nuevosFavoritos));
+
+    let nuevasPelis = this.state.peliculasFavoritas.filter(peli => peli.id !== id);
+    this.setState({
+      peliculasFavoritas: nuevasPelis
+    });
+    }
     render(){
         return(<React.Fragment>
             <h2>Peliculas Favoritas</h2>
             <div className="peliculas">
                                 {this.state.peliculasFavoritas.map(peli => (
-                                    <MovieCard key={peli.id} data={peli} />
+                                    <MovieCard key={peli.id} data={peli} quitarFavoritos={(id) => this.quitarFavoritos(id)}/>
                                 ))}
                             </div>
         </React.Fragment>)
