@@ -46,7 +46,7 @@ class verTodas extends Component {
             <FiltroPelis filtro={(busqueda) => this.filtrarPeliculas(busqueda)} />
              <div className="peliculas">
                 {filtrarPeliculas(this.state.populares).map(peli => (
-                <MovieCard key={peli.id} data={peli} />
+                    <MovieCard key={peli.id} data={peli} />
                 ))}
             </div>
             <button onClick={() => this.cargarMas()}>

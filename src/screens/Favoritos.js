@@ -35,17 +35,17 @@ class Favoritos extends Component {
 
     let nuevasPelis = this.state.peliculasFavoritas.filter(peli => peli.id !== id);
     this.setState({
-      peliculasFavoritas: nuevasPelis
+        peliculasFavoritas: nuevasPelis
     });
     }
     render(){
         return(<React.Fragment>
             <h2>Peliculas Favoritas</h2>
             <div className="peliculas">
-                                {this.state.peliculasFavoritas.map(peli => (
-                                    <MovieCard key={peli.id} data={peli} quitarFavoritos={(id) => this.quitarFavoritos(id)}/>
-                                ))}
-                            </div>
+                {this.state.peliculasFavoritas.map(peli => (
+                    <MovieCard key={peli.id} data={peli} quitarFavoritos={(id) => this.quitarFavoritos(id)}/>
+                ))}
+            </div>
         </React.Fragment>)
     }
 }
