@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import MovieCard from './../components/MovieCard/MovieCard';
+import FiltroPelis from "./../components/FiltroPelis/FiltroPelis";
 
 
 class verTodas extends Component {
@@ -7,9 +8,9 @@ class verTodas extends Component {
         super(props)
         this.state = {
             populares: [],
-            populares2: [],
+            busqueda: '',
             loading: true,
-            pagina: ""
+            pagina: "",
         }
     }
 
@@ -18,7 +19,7 @@ class verTodas extends Component {
 
         fetch(urlPopulares)
             .then(res => res.json())
-            .then(data => this.setState({ populares: data.results, populares2: data.results, pagina: data.page}))
+            .then(data => this.setState({ populares: data.results, pagina: data.page}))
             .catch(error => console.log(error));
     }
     cargarMas(){
@@ -26,13 +27,25 @@ class verTodas extends Component {
 
         fetch(url)
             .then(res => res.json())
-            .then(data => this.setState({ populares: this.state.populares.concat(data.results), populares2: this.state.populares.concat(data.results), pagina: data.page+1}))
+            .then(data => this.setState({ populares: this.state.populares.concat(data.results), pagina: data.page+1}))
             .catch(error => console.log(error));
     }
+
+    filtrarPeliculas (busquedaPelicula) {
+        this.setState({ busqueda: busquedaPelicula });
+    }
+
     render(){
+        const {busqueda} = this.state;
+
+        const filtrarPeliculas = (peliculas) =>
+            peliculas.filter(peli =>
+                peli.title.toLowerCase().includes(busqueda.toLowerCase())
+            );
         return(<React.Fragment>
+            <FiltroPelis filtro={(busqueda) => this.filtrarPeliculas(busqueda)} />
              <div className="peliculas">
-                {this.state.populares2.map(peli => (
+                {filtrarPeliculas(this.state.populares).map(peli => (
                 <MovieCard key={peli.id} data={peli} />
                 ))}
             </div>
