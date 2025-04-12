@@ -7,7 +7,7 @@ class verTodas extends Component {
     constructor(props){
         super(props)
         this.state = {
-            populares: [],
+            cartelera: [],
             busqueda: '',
             loading: true,
             pagina: "",
@@ -15,11 +15,11 @@ class verTodas extends Component {
     }
 
     componentDidMount(){
-        const urlPopulares = 'https://api.themoviedb.org/3/movie/now_playing?api_key=30fb07c3e57fc8656acc83104dff9754&language=es-ES&page=1';
+        const urlcartelera = 'https://api.themoviedb.org/3/movie/now_playing?api_key=30fb07c3e57fc8656acc83104dff9754&language=es-ES&page=1';
 
-        fetch(urlPopulares)
+        fetch(urlcartelera)
             .then(res => res.json())
-            .then(data => this.setState({ populares: data.results, pagina: data.page}))
+            .then(data => this.setState({ cartelera: data.results, pagina: data.page}))
             .catch(error => console.log(error));
     }
     cargarMas(){
@@ -27,7 +27,7 @@ class verTodas extends Component {
 
         fetch(url)
             .then(res => res.json())
-            .then(data => this.setState({ populares: this.state.populares.concat(data.results), pagina: data.page+1}))
+            .then(data => this.setState({ cartelera: this.state.cartelera.concat(data.results), pagina: data.page+1}))
             .catch(error => console.log(error));
     }
 
@@ -45,7 +45,7 @@ class verTodas extends Component {
         return(<React.Fragment>
             <FiltroPelis filtro={(busqueda) => this.filtrarPeliculas(busqueda)} />
              <div className="peliculas">
-                {filtrarPeliculas(this.state.populares).map(peli => (
+                {filtrarPeliculas(this.state.cartelera).map(peli => (
                 <MovieCard key={peli.id} data={peli} />
                 ))}
             </div>

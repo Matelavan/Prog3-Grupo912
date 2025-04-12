@@ -9,4 +9,8 @@
     text-align: center;
     padding: 10px;
   }
+
+.oculta {
+  display: none;
+}
   

@@ -7,7 +7,9 @@ class MovieCard extends Component {
     super(props);
     this.state = {
       movieData: props.data,
-      textofavoritos: "Agregar a favoritos"
+      textofavoritos: "Agregar a favoritos",
+      descripcion: "oculta",
+      textodescripcion: "Ver descripción"
     };
   }
 componentDidMount(){
@@ -22,6 +24,20 @@ componentDidMount(){
     })
   }
 
+}
+mostrarDescripcion(){
+  if (this.state.descripcion === "oculta") {
+    this.setState({
+      descripcion: "visible",
+      textodescripcion: "Ocultar descripción"
+    })
+  }
+  else {
+    this.setState({
+      descripcion: "oculta",
+      textodescripcion: "Ver descripción"
+    })
+  }
 }
 favoritos(id){
   let favoritos = [];
@@ -55,7 +71,8 @@ favoritos(id){
           />
           </Link>
           <p>{this.state.movieData.title}</p>
-          <p>{this.state.movieData.overview}</p>
+          <p className={this.state.descripcion}>{this.state.movieData.overview}</p>
+          <p onClick={() => this.mostrarDescripcion()}>{this.state.textodescripcion}</p>
       <button onClick={() => this.favoritos(this.state.movieData.id)}>
         {this.state.textofavoritos}
       </button>
