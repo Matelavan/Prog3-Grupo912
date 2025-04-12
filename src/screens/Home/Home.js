@@ -57,7 +57,7 @@ class Home extends Component {
                                     <MovieCard key={peli.id} data={peli} />
                                 ))}
                             </div>
-                            <Link to="/ver-todas/populares">Ver todas</Link>
+                            <Link to="/verTodas/populares">Ver todas</Link>
                         </section>
 
                         <section>
@@ -67,7 +67,7 @@ class Home extends Component {
                                     <MovieCard key={peli.id} data={peli} />
                                 ))}
                             </div>
-                            <Link to="/ver-todas/cartelera">Ver todas</Link>
+                            <Link to="/verTodas/cartelera">Ver todas</Link>
                         </section>
                     </>
                 )}
