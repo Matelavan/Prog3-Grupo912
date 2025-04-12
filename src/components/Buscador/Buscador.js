@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+
+
 export default class Buscador extends Component {
     constructor(props){
         super(props)
@@ -10,7 +12,7 @@ export default class Buscador extends Component {
 
     controlarForm(evento){
         evento.preventDefault()
-        console.log ('tu peli es', this.state.input)
+        this.props.history.push('/resultados/'+ this.state.input)
     }
 
     controlarInput(evento){
