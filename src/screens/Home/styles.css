@@ -1,7 +1,7 @@
 .peliculas {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px; /* más separación entre tarjetas */
+  gap: 300px; 
   justify-content: center;
   padding: 30px;
   }

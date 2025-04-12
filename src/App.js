@@ -7,6 +7,7 @@ import Home from './screens/Home/Home';
 import verTodas from './screens/VerTodas';
 import Favoritos from './screens/Favoritos';
 import NotFound from "./screens/NotFound/NotFound";
+import ResultBusqueda from "./screens/ResultBusqueda/ResultBusqueda";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path={'/verTodas'} component={verTodas} />
         <Route path={'/favoritos'} component={Favoritos} />
         <Route path={''} component={NotFound} />
+        <Route path={'/resultados/:busqueda'} component={ResultBusqueda} />
       </Switch>
       
       <Footer />
