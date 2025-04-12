@@ -8,6 +8,8 @@ import verTodas from './screens/VerTodas';
 import Favoritos from './screens/Favoritos';
 import NotFound from "./screens/NotFound/NotFound";
 import ResultBusqueda from "./screens/ResultBusqueda/ResultBusqueda";
+import verTodasCartelera from './screens/VerTodasCartelera';
+
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
         <Route path={'/moviedetalle/:id'} component={MovieDetalle} />
         <Route path={'/'} exact={true} component={Home} />
         <Route path={'/verTodas/populares'} component={verTodas} />
-        <Route path={'/verTodas/cartelera'} component={verTodas} />
+        <Route path={'/verTodas/cartelera'} component={verTodasCartelera} />
         <Route path={'/favoritos'} component={Favoritos} />
         <Route path={''} component={NotFound} />
         <Route path={'/resultados/:busqueda'} component={ResultBusqueda} />
