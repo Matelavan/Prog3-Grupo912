@@ -13,11 +13,11 @@ function Header() {
             path: '/favoritos'
         }, {
             name: 'Cartelera',
-            path: '/ver-todas/cartelera'
+            path: '/verTodas/cartelera'
         },
         {
             name: 'Populares',
-            path: '/ver-todas/populares'
+            path: '/verTodas/populares'
         }
     ]
 

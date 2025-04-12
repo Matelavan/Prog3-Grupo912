@@ -18,7 +18,8 @@ function App() {
       <Switch>
         <Route path={'/moviedetalle/:id'} component={MovieDetalle} />
         <Route path={'/'} exact={true} component={Home} />
-        <Route path={'/verTodas'} component={verTodas} />
+        <Route path={'/verTodas/populares'} component={verTodas} />
+        <Route path={'/verTodas/cartelera'} component={verTodas} />
         <Route path={'/favoritos'} component={Favoritos} />
         <Route path={''} component={NotFound} />
         <Route path={'/resultados/:busqueda'} component={ResultBusqueda} />
