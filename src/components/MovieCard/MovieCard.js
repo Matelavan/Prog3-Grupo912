@@ -6,10 +6,45 @@ class MovieCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movieData: props.data
+      movieData: props.data,
+      textofavoritos: "Agregar a favoritos"
     };
   }
+componentDidMount(){
+  let favoritos = [];
+  let webstorage = localStorage.getItem("favoritos");
+  if (webstorage!==null) {
+    favoritos=JSON.parse(webstorage)
+  };
+  if (favoritos.includes(this.state.movieData.id)) {
+    this.setState({
+      textofavoritos: "Quitar de favoritos"
+    })
+  }
 
+}
+favoritos(id){
+  let favoritos = [];
+  let webstorage = localStorage.getItem("favoritos");
+  if (webstorage!==null) {
+    favoritos=JSON.parse(webstorage)
+  };
+  if (favoritos.includes(id)) {
+    favoritos = favoritos.filter(elid => elid!== id);
+    this.setState({
+      textofavoritos: "Agregar a favoritos"
+    })
+  }
+  else {
+    favoritos.push(id);
+    this.setState({
+      textofavoritos: "Quitar de favoritos"
+    })
+  }
+  let favoritosString = JSON.stringify(favoritos);
+  localStorage.setItem("favoritos", favoritosString);
+  console.log(localStorage)
+}
   render() {
     return (
       <div className="movieCard">
@@ -21,7 +56,9 @@ class MovieCard extends Component {
           </Link>
           <p>{this.state.movieData.title}</p>
           <p>{this.state.movieData.overview}</p>
-      
+      <button onClick={() => this.favoritos(this.state.movieData.id)}>
+        {this.state.textofavoritos}
+      </button>
       </div>
     );
   }
