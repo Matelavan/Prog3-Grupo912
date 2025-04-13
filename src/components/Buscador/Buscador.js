@@ -12,7 +12,7 @@ export default class Buscador extends Component {
 
     controlarForm(evento){
         evento.preventDefault()
-        this.props.history.push('/resultados/'+ this.state.input)
+        this.props.history.push('/resultBusqueda/'+ this.state.input)
     }
 
     controlarInput(evento){
@@ -34,3 +34,4 @@ export default class Buscador extends Component {
     )
   }
 }
+

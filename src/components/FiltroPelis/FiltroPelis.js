@@ -19,7 +19,7 @@ class FiltroPelis extends Component{
     render(){
         return(
             <form onSubmit={(evento) => this.manejarSubmit(evento)}>
-                <input onChange={(evento)=> this.controlarForm(evento)} placeholder="Busca una pelicula.." value={this.state.valorInput}/>
+                <input onChange={(evento)=> this.controlarForm(evento)} placeholder="Filtra por pelicula!" value={this.state.valorInput}/>
             </form>
         )
     }

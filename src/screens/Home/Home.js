@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { Link } from 'react-router-dom';
 import FiltroPelis from "../../components/FiltroPelis/FiltroPelis";
+import Buscador from "../../components/Buscador/Buscador";
 import './styles.css'
 
 class Home extends Component {
@@ -43,7 +44,9 @@ class Home extends Component {
 
         return (
             <div>
-                <h1>Películas</h1>
+                <Buscador history={props.history} />
+
+                <h1>Filtra Tus peliculas favoritas!!!</h1>
                 <FiltroPelis filtro={(busqueda) => this.filtrarPeliculas(busqueda)} />
 
                 {loading ? (

@@ -24,7 +24,7 @@ function App() {
         <Route path={'/verTodas/cartelera'} component={verTodasCartelera} />
         <Route path={'/favoritos'} component={Favoritos} />
         <Route path={''} component={NotFound} />
-        <Route path={'/resultados/:busqueda'} component={ResultBusqueda} />
+        <Route path={'/resultBusqueda/:busqueda'} component={ResultBusqueda} />
       </Switch>
       
       <Footer />
