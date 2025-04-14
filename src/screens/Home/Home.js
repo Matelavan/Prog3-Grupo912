@@ -44,7 +44,6 @@ class Home extends Component {
 
         return (
             <div>
-                <Buscador history={props.history} />
 
                 <h1>Filtra Tus peliculas favoritas!!!</h1>
                 <FiltroPelis filtro={(busqueda) => this.filtrarPeliculas(busqueda)} />
