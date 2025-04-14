@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { Link } from 'react-router-dom';
-import FiltroPelis from "../../components/FiltroPelis/FiltroPelis";
 import Buscador from "../../components/Buscador/Buscador";
 import './styles.css'
 
@@ -43,15 +42,18 @@ class Home extends Component {
             );
 
         return (
-            <div>
+            <div className="fondo" >
 
-                <h1>Filtra Tus peliculas favoritas!!!</h1>
-                <FiltroPelis filtro={(busqueda) => this.filtrarPeliculas(busqueda)} />
+                
+                <h1>Busca tu pelicula favorita!</h1>
+                 <Buscador history={this.props.history} />
+
 
                 {loading ? (
                     <p>Cargando...</p>
                 ) : (
                     <>
+                        
                         <section>
                             <h2>Películas Populares</h2>
                             <div className="peliculas">

@@ -1,8 +1,19 @@
 .peliculas {
   display: flex;
   flex-wrap: wrap;
-  gap: 300px; 
-  justify-content: center;
+  justify-content: space-between;
   padding: 30px;
   }
   
+  @media (max-width: 768px) {
+    .fondo{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 30px;
+    }
+}
+
+@media (max-width: 420px) {
+
+}

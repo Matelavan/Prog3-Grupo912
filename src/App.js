@@ -23,8 +23,8 @@ function App() {
         <Route path={'/verTodas/populares'} component={verTodas} />
         <Route path={'/verTodas/cartelera'} component={verTodasCartelera} />
         <Route path={'/favoritos'} component={Favoritos} />
-        <Route path={''} component={NotFound} />
         <Route path={'/resultBusqueda/:busqueda'} component={ResultBusqueda} />
+        <Route path={''} component={NotFound} />
       </Switch>
       
       <Footer />

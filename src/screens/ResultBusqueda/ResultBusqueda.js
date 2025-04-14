@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import MovieCard from '../../components/MovieCard/MovieCard';
+import './styles.css'
 
 export default class ResultBusqueda extends Component {
     constructor(props){
@@ -20,8 +22,10 @@ export default class ResultBusqueda extends Component {
     return (
       <div>
         Resultados de: {this.state.busqueda}
-        <section>
-            {this.state.resultados.map(elm => <h1>{elm.original_title }</h1>)}
+        <section className='peliculas'>
+            {this.state.resultados.map(peli => (
+                                    <MovieCard key={peli.id} data={peli} />
+                                ))}
         </section>
         
     </div>
