@@ -58,3 +58,5 @@ class verTodas extends Component {
 
 
 export default verTodas;
+
+//Es lo mismo que ver todas solo cambia que son las películas en cartelera (now_playing) y la otra son las películas populares (popular)
